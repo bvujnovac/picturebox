@@ -1,7 +1,10 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: bvujnovac
- * Date: 11.11.16.
- * Time: 01:24
- */
+
+return [
+    //'some_config_key' => 'some config value',
+    'url' => 'http://privserver.ddns.net/picturebox/',
+    'mode'  => 'development',
+    'admin_email' => 'student@etf.hr',
+    'admin_password' => 'phpakademija',
+
+];
