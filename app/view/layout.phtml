@@ -15,6 +15,7 @@
         <link rel="stylesheet" href="<?php echo App::config('url') ?>public/css/bootstrap.min.css">
         <link rel="stylesheet" href="<?php echo App::config('url') ?>public/css/font-awesome.min.css">
         <link rel="stylesheet" href="<?php echo App::config('url') ?>public/style.css">
+
     </head>
     <body>
         <!--
@@ -47,7 +48,7 @@
                             <li><a href="<?php echo App::config('url') ?>heart"><i class="fa fa-heart fa-2x" aria-hidden="true"></i></a></li>
                             <li><a href="<?php echo App::config('url') ?>index/logout"><i class="fa fa-user-times fa-2x" aria-hidden="true"></i></a></li>
                         <?php else: ?>
-                            <li><button type="button" class="btn btn-info btn-lg deff" data-toggle="modal" data-target="#myModal"><i class="fa fa-user fa-2x" aria-hidden="true"></i></button></li>
+                            <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal"><i class="fa fa-user fa-2x" aria-hidden="true"></i></button>
                         <?php endif; ?>
                     </div>
                 </div>
@@ -56,27 +57,6 @@
 
         <!-- Main content from view -->
         <main class="container-fluid">
-            
-         <div class="modal fade" id="myModal" role="dialog">
-    <div class="modal-dialog">
-    
-      <!-- Modal content-->
-      <div class="modal-content">
-        <div class="modal-header">
-          <button type="button" class="close" data-dismiss="modal">&times;</button>
-          <h4 class="modal-title">Modal Header</h4>
-        </div>
-        <div class="modal-body">
-          <p>Some text in the modal.</p>
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-        </div>
-      </div>
-      
-    </div>
-  </div>
-            
             <?php echo $content ?>
         </main>
         <!--
@@ -85,7 +65,41 @@
             </footer>
         -->
         <!-- Bootstrap JavaScript -->
-        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+        <div class="modal fade" id="myModal" role="dialog">
+            <div class="modal-dialog">
+
+                <!-- Modal content-->
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        <h4>Admin login</h4>
+                    </div>
+                    <div class="modal-body">
+                        <form method="post" action="<?php echo App::config('url') ?>index/submit" class="form">
+                            <div class="form-group">
+                                <label for="email">Email</label>
+                                <input type="text" name="email" id="email" class="form-control">
+                            </div>
+
+                            <div class="form-group">
+                                <label for="password">Lozinka</label>
+                                <input type="password" name="password" id="password" class="form-control">
+                            </div>
+
+                            <div class="form-group">
+                                <input type="submit" class="btn btn-primary" value="Prijava">
+                            </div>
+                        </form>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
     </body>
 </html>
