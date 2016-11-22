@@ -2,29 +2,53 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta property="og:url"           content="http://privserver.ddns.net/picturebox/index.php" />
+    <meta property="og:type"          content="website" />
+    <meta property="og:title"         content="Picturebox" />
+    <meta property="og:description"   content="Instagram knockoff" />
+    <meta property="og:image"         content="http://privserver.ddns.net/picturebox/public/logo_text_transparent.png" />
     <title>Picturebox</title>
 
     <!-- Required for Bootstrap -->
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="<?php echo App::config('url') ?>public/css/bootstrap.min.css">
+    <link rel="stylesheet" href="<?php echo App::config('url') ?>public/css/font-awesome.min.css">
     <link rel="stylesheet" href="<?php echo App::config('url') ?>public/style.css">
 </head>
 <body>
+<!--
+<script>
+    window.fbAsyncInit = function() {
+        FB.init({
+            appId      : '997786960353599',
+            xfbml      : true,
+            version    : 'v2.8'
+        });
+    };
 
+    (function(d, s, id){
+        var js, fjs = d.getElementsByTagName(s)[0];
+        if (d.getElementById(id)) {return;}
+        js = d.createElement(s); js.id = id;
+        js.src = "//connect.facebook.net/en_US/sdk.js";
+        fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));
+</script>-->
 <header>
     <nav class="navbar navbar-default">
         <div class="container">
-            <div class="nav navbar-nav">
-                <a href="<?php echo App::config('url') ?>" class="navbar-left"><img class="img2" src="<?php echo App::config('url') ?>public/logo_text_transparent.png"></a>
+            <div class="nav navbar-nav navbar-left">
+                <li></li><a href="<?php echo App::config('url') ?>" class=""><i class="fa fa-instagram fa-3x" aria-hidden="true"></i><img class="img2" src="<?php echo App::config('url') ?>public/logo_text_transparent.png"></a></li>
             </div>
-            <ul class="nav navbar-nav navbar-right">
+            <div class="nav navbar-nav navbar-right">
                 <?php if(isset($isLoggedIn) && $isLoggedIn): ?>
-                    <li><a href="<?php echo App::config('url') ?>admin/logout">Logout</a></li>
+                    <li><a href="<?php echo App::config('url') ?>admin/heart"><i class="fa fa-heart fa-2x" aria-hidden="true"></i></a></li>
+                    <li><a href="<?php echo App::config('url') ?>admin/logout"><i class="fa fa-user-times fa-2x" aria-hidden="true"></i></a></li>
                 <?php else: ?>
-                    <li><a href="<?php echo App::config('url') ?>admin/index">Login</a></li>
+                    <li><a href="<?php echo App::config('url') ?>admin/index"><i class="fa fa-user fa-2x" aria-hidden="true"></i></a></li>
                 <?php endif; ?>
-            </ul>
+            </div>
         </div>
     </nav>
 </header>
