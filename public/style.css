@@ -7,6 +7,7 @@ html {
 body {
     /* Margin bottom by footer height */
     background-color: #fafafa !important;
+
 }
 /*
 .footer {
@@ -27,7 +28,7 @@ main { padding-bottom: 50px; }
     background-color: white; !important;
     //height: 77px;
     border-radius: 0; !important;
- }
+}
 
 .container-fluid {
     padding: 20px;
@@ -37,9 +38,11 @@ main { padding-bottom: 50px; }
 }
 
 .thumbnail {
-    padding: 0 0 15px 0;
     border: none;
+    max-width: 640px;
+    max-height: 640px;
     margin-bottom: 50px;
+    margin: auto;
 }
 .thumbnail img {
     width: 100%;
@@ -77,6 +80,10 @@ a:hover{color: inherit;}
     animation-duration: 1s;
     -webkit-animation-duration: 1s;
     visibility: visible;
+}
+
+.row-centered {
+    text-align:center;
 }
 
 @keyframes slide {
